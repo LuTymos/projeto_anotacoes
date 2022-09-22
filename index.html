@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Anotações</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&display=swap" rel="stylesheet">
+    <!-- ---------------- -->
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-iYQeCzEYFbKjA/T2uDLTpkwGzCiq6soy8tYaI1GyVh/UjpbCx/TYkiZhlZB6+fzT" crossorigin="anonymous">
+    <!-- ---------------- -->
+
+    <!-- CSS próprio -->
+    <link href="style.css" rel="stylesheet">
+    <!-- ---------------- -->
+
+</head>
+<body>
+    
+<div class="btn-add">
+    <i class="fa-solid fa-plus"></i>
+</div>
+<div class="container">
+
+
+</div>
+
+<div class="caixa">
+    <i class="fa-regular fa-circle-xmark close"></i>
+    <form action="">
+        <div class="form-group">
+            <label for="exampleFormControlTextarea1">Sua anotação:</label>
+            <textarea class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+          </div>
+    <button type="button" class="btn btn-success add">Enviar</button>
+    </form>
+</div>
+
+
+    <!-- Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-u1OknCvxWvY5kfmNBILK2hRnQC3Pr17a+RTT6rIHI7NnikvbZlHgTPOOmMi466C8" crossorigin="anonymous"></script>
+    <!-- -------------------- -->
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/908378d895.js" crossorigin="anonymous"></script>
+    <!-- -------------------- -->
+
+    <!-- Jquery -->
+    <script src="jquery-3.6.1.min.js"></script>
+    <script>
+    //    Script Jquery
+    $(document).ready(()=>{
+
+    
+    $(".btn-add").click(()=>{
+        $('.caixa').show()
+    });
+    $(".close").click(()=>{
+        $('.caixa').hide()
+    });
+
+    
+ var i = 1
+    
+
+ 
+    $(".add").click(()=>{
+        var anotacao = $('textarea').val()
+        var el= `<div class="post-it" id="${i}">
+            <div class="feito">
+            <i class="fa-solid fa-check"></i>
+            </div>
+            <p>${anotacao}</p>
+            </div>`
+            $(".container").append(el)
+            $('textarea').val('')
+            i++
+            
+    });
+
+    
+
+})
+    </script>
+    <!-- -------------------- -->
+
+</body>
+</html>
