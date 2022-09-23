@@ -74,7 +74,7 @@
         var anotacao = $('textarea').val()
         var el= `<div class="post-it" id="${i}">
             <div class="feito">
-            <i class="fa-solid fa-check"></i>
+            <i class="fa-solid fa-check" onClick="apagarTarefa(${i})"></i>
             </div>
             <p>${anotacao}</p>
             </div>`
